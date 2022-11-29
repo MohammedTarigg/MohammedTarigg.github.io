@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="img/logo.png" rel="icon" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.4/dist/kute.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <!-- page loader -->
+    <div id="page-loader">
+      <div class="page-loader-content">
+        Loading
+        <div class="circle"></div>
+      </div>
+    </div>
+    <!-- page loader end -->
+    <!-- overlay effect -->
+    <div class="overlaying-effect"></div>
+    <!-- overlay effect end-->
+    <!-- background animation -->
+    <div class="bg-animation"></div>
+    <!-- background animation end-->
+    <div class="container">
+          <!-- header -->
+      <div class="header">
+        <div class="links">
+          <a href="#about" class="bt link-item active-link-item">About</a>
+          <a href="#portfolio" class="bt link-item">Portfolio</a>
+          <a href="#contact" class="bt link-item">Contact</a>
+        </div>
+        <button class="burger bt">
+          <svg viewBox="0 0 100 100" width="35" class="svgburger">
+            <rect width="50" x="50" y="30" class="top"></rect>
+            <rect width="100" x="1" y="50" class="mid"></rect>
+            <rect width="50" x="1" y="70" class="bot"></rect>
+          </svg>
+        </button>
+      </div>
+          <!-- about page -->
+      <section id="about" class="about-section active-section">
+        <svg viewBox="0 0 150 150" width="150" height="150">
+          <g transform="translate(74.72225843815968 77.50529495554393)">
+            <path
+              id="blob1"
+              d="M47.4 -37.4C55.7 -27.4 52.7 -8 46.3 6.8C39.9 21.6 30.1 31.9 18.2 37.7C6.2 43.5 -8 44.7 -20.1 39.7C-32.3 34.6 -42.5 23.3 -47.9 8.4C-53.3 -6.5 -54 -25.1 -45.3 -35.3C-36.5 -45.4 -18.2 -47.2 0.7 -47.7C19.5 -48.3 39.1 -47.5 47.4 -37.4"
+            ></path>
+          </g>
+          <g transform="translate(66.80536142159507 71.41552900257442)">
+            <path
+              id="blob2"
+              d="M44.5 -33.2C56.7 -20.2 64.9 -1.8 61.5 14.4C58.1 30.6 43.2 44.6 25.6 52.9C8.1 61.3 -12 64 -24.3 55.9C-36.6 47.9 -41.2 29.2 -43.9 11.6C-46.6 -5.9 -47.6 -22.3 -39.9 -34.2C-32.3 -46.1 -16.2 -53.6 0 -53.6C16.2 -53.6 32.3 -46.1 44.5 -33.2"
+            ></path>
+          </g>
+        </svg>
+        <h1>Hello , My Name Is <span>Mohamed Tarig</span></h1>
+        <p>
+          I'm a front-end Engineer, I develop websites using html5, css3,
+          javascript and react. Check my latest work on
+          <a class="link-item" href="#portfolio">Portfolio Page</a>. Want to talk about about a project?
+          you can get in touch with me. <a class="link-item" href="#contact">Here</a>
+        </p>
+        <h2>Resuming Skills</h4>
+          <div class="skills">
+            <div class="skill-item">html</div>
+            <div class="skill-item">css</div>
+            <div class="skill-item">javascript</div>
+            <div class="skill-item">react</div>
+            <div class="skill-item">flutter</div>
+          </div>
+          <a href="https://drive.google.com/file/d/19n4f935NT8V298MLk2Jm7imMD6UccaIr/view?usp=sharing" class="util-button" target="_blank">download cv</a>
+        </section>
+          <!-- portfolio page -->
+      <section id="portfolio" class="portfolio-section">
+        <h1><span>Recent Work</span></h1>
+        <div class="work-container">
+          <div class="work-item">
+            <div class="work-thumbnail">
+              <img src="screenshots/starsgame/starmatch.png">          
+              <a class="util-button website-button" href="https://mohammedtarigg.github.io/StarsGame/" target="_blank">Website</a>
+              <a class="util-button repo-button" href="https://github.com/MohammedTarigg/StarsGame" target="_blank">Repo</a>
+            </div>
+          <h3>Star Match</h3>
+          </div>
+          <div class="work-item">
+            <div class="work-thumbnail">
+              <img src="screenshots/foodcore/foodcoremain.jpg">          
+              <a class="util-button website-button" href="https://mohammedtarigg.github.io/FoodCore/web/" target="_blank">Website</a>
+              <a class="util-button repo-button" href="https://github.com/MohammedTarigg/FoodCore" target="_blank">Repo</a>
+            </div>
+          <h3>Food Core</h3>
+          </div>
+        </div>
+      </section>
+          <!-- contact -->
+      <section id="contact" class="contact-section"> 
+        <h1><span>Contact</span></h1>
+        <p>
+          Supportive & self-driven front-end developer dedicated to efficiently
+          resolving project issues. Ability and willingness to innovate and
+          learn new technologies, quick learner & passionate about development.
+        </p>
+        <h2>Email me on :</h2><h3><span>mohamed.tariggsd@gmail.com</span></h3>
+        <a class="toggle-contact-form util-button" href="mailto:mohamed.tariggsd@gmail.com">send message</a>
+      </section>
+    </div>
+  </body>
+  <script src="js/scripts.js"></script>
+</html>
