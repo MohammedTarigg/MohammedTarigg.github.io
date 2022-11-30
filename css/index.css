@@ -92,6 +92,12 @@ section {
   align-items: center;
   z-index: 2;
 }
+@media only screen and (max-width: 550px) {
+  .overlaying-effect {
+    top: 11%;
+  }
+}
+
 .overlaying-item {
   width: 0;
   height: 13vh;
