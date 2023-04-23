@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta property="og:title" content="Mohamed Tarig's Portfolio">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="img/logo.png">
+    <meta property="og:image" content="img/og-logo.png">
     <meta property="og:site_name" content="Mohamed's Portfolio">
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://mohammedtarigg.github.io">
@@ -35,22 +35,22 @@
     <!-- background animation -->
     <div class="bg-animation"></div>
     <!-- background animation end-->
-    <div class="container">
-        <!-- header -->
-        <div class="header">
-            <div class="links">
-                <a href="#about" class="bt link-item active-link-item">About</a>
-                <a href="#portfolio" class="bt link-item">Portfolio</a>
-                <a href="#contact" class="bt link-item">Contact</a>
-            </div>
-            <button class="burger bt">
-          <svg viewBox="0 0 100 100" width="35" class="svgburger">
-            <rect width="50" x="50" y="30" class="top"></rect>
-            <rect width="100" x="1" y="50" class="mid"></rect>
-            <rect width="50" x="1" y="70" class="bot"></rect>
-          </svg>
-        </button>
-        </div>
+    <!-- header -->
+    <header>
+        <div  class="header glass">
+        <nav class="links show-header">
+            <a href="#about" class="bt link-item active-link">About</a>
+            <a href="#portfolio" class="bt link-item">Portfolio</a>
+            <a href="#contact" class="bt link-item">Contact</a>
+        </nav>
+        <button class="burger bt active-burger">
+      <svg viewBox="0 0 100 100" width="35" class="svgburger">
+        <rect width="50" x="50" y="30" class="top"></rect>
+        <rect width="100" x="1" y="50" class="mid"></rect>
+        <rect width="50" x="1" y="70" class="bot"></rect>
+      </svg></div>
+    </header>
+    <main class="container">
         <!-- about page -->
         <section id="about" class="about-section active-section">
             <svg viewBox="0 0 150 150" width="150" height="150">
@@ -83,29 +83,29 @@
                 <a href="Mohamed Tarig - Front End Developer .pdf" class="util-button" target="_blank">download cv</a>
         </section>
         <!-- portfolio page -->
-        <section id="portfolio" class="portfolio-section">
+        <section id="portfolio" class=" portfolio-section">
             <h1><span>Recent Work</span></h1>
             <div class="work-container">
-                <div class="work-item">
+                <article class="work-item">
                     <div class="work-thumbnail">
                         <img src="screenshots/starsgame/starmatch.png">
                         <a class="util-button website-button" href="https://mohammedtarigg.github.io/StarsGame/" target="_blank">Website</a>
                         <a class="util-button repo-button" href="https://github.com/MohammedTarigg/StarsGame" target="_blank">Repository</a>
                     </div>
                     <h3>Star Match</h3>
-                </div>
-                <div class="work-item">
+                </article>
+                <article class="work-item">
                     <div class="work-thumbnail">
                         <img src="screenshots/foodcore/foodcoremain.jpg">
                         <a class="util-button website-button" href="https://mohammedtarigg.github.io/FoodCore/web/" target="_blank">Website</a>
                         <a class="util-button repo-button" href="https://github.com/MohammedTarigg/FoodCore" target="_blank">Repository</a>
                     </div>
                     <h3>Food Core</h3>
-                </div>
+                </article>
             </div>
         </section>
         <!-- contact -->
-        <section id="contact" class="contact-section">
+        <section id="contact" class=" contact-section">
             <h1><span>Contact</span></h1>
             <p>
                 Supportive & self-driven front-end developer dedicated to efficiently resolving project issues. Ability and willingness to innovate and learn new technologies, quick learner & passionate about development.
@@ -114,7 +114,7 @@
             <h3><span>mohamed.tarigsd@gmail.com</span></h3>
             <a class="toggle-contact-form util-button" href="mailto:mohamed.tarigsd@gmail.com">send message</a>
         </section>
-    </div>
+    </main>
 </body>
 <script src="js/scripts.js"></script>
 

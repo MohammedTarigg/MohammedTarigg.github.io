@@ -72,18 +72,19 @@ body {
 .container {
   width: 100%;
   max-width: 1100px;
-  margin: 25px auto;
+  margin: 15vh auto;
 }
 section {
   display: none;
 }
 .active-section {
   display: flex;
+
 }
 /*--------------------overlay effect--------------------*/
 .overlaying-effect {
   position: fixed;
-  top: 15%;
+  top: 12vh;
   width: 100%;
   display: none;
   flex-direction: column;
@@ -231,12 +232,20 @@ section {
 }
 
 /*--------------------header--------------------*/
+header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
 .header {
   transition: all 0.2s ease 0.3s;
   display: grid;
   grid-template-columns: auto 60px;
-  border-radius: 5px;
-  position: relative;
+  margin-left:5%;
+  width: 90%;
+  align-items: center;
+  border-radius: 0px 0px 100px 100px;
 }
 .glass {
   background-color: var(--white-glass);
@@ -248,7 +257,7 @@ section {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 5px;
+  border-radius: 0px 0px 100px 100px;
   background-color: transparent;
   transition: all 0.3s ease;
 }
@@ -332,12 +341,11 @@ section {
 }
 
 /*--------------------about page--------------------*/
-.active-section {
+section.active-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto 17%;
 }
 .content {
   display: flex;
@@ -350,6 +358,9 @@ section {
 }
 #blob1 {
   fill: var(--primary-color);
+}
+.active-section h1 {
+  margin: 2vh 13vw;
 }
 .active-section p {
   margin: auto 10% auto 15%;

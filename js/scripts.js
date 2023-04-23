@@ -1,6 +1,6 @@
 /*-----------------Page Loader-----------------*/
 function pageLoader() {
-  window.addEventListener("load", () => {
+  window.addEventListener("load",() => {
     document.getElementById("page-loader").classList.add("slide-out");
   });
 }
@@ -22,7 +22,7 @@ bgAnimation();
 /*-----------------burger handler-----------------*/
 function burgerHandler() {
   const bt = document.querySelector(".burger");
-  bt.addEventListener("click", () => {
+  bt.addEventListener("click",() => {
     bt.classList.toggle("active-burger");
     showLinksMenu();
   });
@@ -44,7 +44,7 @@ function overlayEffect() {
 overlayEffect();
 /*------------------------------- hide and show sections -----------------------------------*/
 
-document.addEventListener("click", (e) => {
+document.addEventListener("click",(e) => {
   if (linkRules(e)) {
     const hash = e.target.hash;
     // console.log(location.hash);console.log(hash);
@@ -58,11 +58,11 @@ document.addEventListener("click", (e) => {
     toggleOverLayEffect();
     setTimeout(() => {
       activeSection(hash);
-    }, 300);
+    },300);
     setTimeout(() => {
       toggleOverLayEffect();
       document.querySelector(".overlaying-effect").style.display = "none";
-    }, 1000);
+    },1000);
   }
 });
 
@@ -96,6 +96,21 @@ const blobAnimation = KUTE.fromTo(
   "#blob1",
   { path: "#blob1" },
   { path: "#blob2" },
-  { repeat: 999, duration: 3000, yoyo: true }
+  { repeat: 999,duration: 3000,yoyo: true }
 );
 blobAnimation.start();
+
+/*-----------------On reload-----------------*/
+function withReload() {
+  window.addEventListener("load",() => {
+    const elements = document.getElementsByClassName("bt link-item");
+    for (link of elements) {
+       link.classList.remove("active-link-item");
+      if ((window.location.href).includes(link.getAttribute("href"))) {
+        activeSection(link.hash);
+        link.classList.add("active-link-item");
+      }
+    }
+  });
+}
+withReload();
