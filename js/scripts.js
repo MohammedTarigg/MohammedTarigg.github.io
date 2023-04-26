@@ -81,7 +81,7 @@ function activeSection(sectionId) {
     .querySelector("section.active-section")
     .classList.remove("active-section");
   document.querySelector(sectionId).classList.add("active-section");
-  // window.scrollTo(0.0);
+  // window.scrollTo(0,0);
 }
 /*------------------------------- toggle overlay effect -----------------------------------*/
 function toggleOverLayEffect() {
@@ -105,7 +105,7 @@ function withReload() {
   window.addEventListener("load",() => {
     const elements = document.getElementsByClassName("bt link-item");
     for (link of elements) {
-       link.classList.remove("active-link-item");
+      link.classList.remove("active-link-item");
       if ((window.location.href).includes(link.getAttribute("href"))) {
         activeSection(link.hash);
         link.classList.add("active-link-item");

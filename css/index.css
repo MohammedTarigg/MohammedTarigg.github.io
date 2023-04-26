@@ -4,7 +4,7 @@
   --dark-2: #08080c;
   --dark-light: #32323b;
   --dark-light-2: #41414c;
-  --white: #ffffff;
+  --white: #fdfdfd;
   --white-light: #c9c9c9;
   --white-glass: #c9c9c921;
   --dark-light-glass: #32323b46;
@@ -14,6 +14,8 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  border: none;
+  transition: all 0.3s ease;
 }
 ::before,
 ::after {
@@ -40,6 +42,7 @@ body {
   color: var(--white);
 }
 .util-button {
+  position: relative;
   background-color: var(--primary-color);
   padding: 9px 25px;
   margin: 2% auto;
@@ -48,7 +51,6 @@ body {
   text-transform: capitalize;
   cursor: pointer;
   font-weight: 600;
-  position: relative;
   text-decoration: none;
   border: none;
   /* border-radius: 25px; */
@@ -66,8 +68,37 @@ body {
   transition: transform 0.3s ease;
   pointer-events: none;
 }
+.light-glass::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-radius: 5px;
+  top: 0;
+  height: 0;
+  backdrop-filter: blur(2px);
+  background-color: var(--dark-light-glass);
+  height: 100%;
+  z-index: -1;
+}
 .util-button:hover::before {
   transform: translate(0, 0);
+}
+input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s;
+}
+*:-webkit-autofill,
+*:-webkit-autofill:hover,
+*:-webkit-autofill:focus,
+*:-webkit-autofill:active {
+  /* use animation hack, if you have hard styled input */
+  transition: all 5000s ease-in-out 0s;
+  transition-property: background-color, color;
+  /* if input has one color, and didn't have bg-image use shadow */
+  -webkit-box-shadow: 0 0 0px 1000px rgb(20, 20, 25) inset;
+  /* text color */
+  -webkit-text-fill-color: #fff;
+  /* font weigth */
+  font-weight: 300 !important;
 }
 .container {
   width: 100%;
@@ -79,7 +110,6 @@ section {
 }
 .active-section {
   display: flex;
-
 }
 /*--------------------overlay effect--------------------*/
 .overlaying-effect {
@@ -92,11 +122,6 @@ section {
   justify-content: center;
   align-items: center;
   z-index: 2;
-}
-@media only screen and (max-width: 550px) {
-  .overlaying-effect {
-    top: 11%;
-  }
 }
 
 .overlaying-item {
@@ -232,7 +257,7 @@ section {
 }
 
 /*--------------------header--------------------*/
-header{
+header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -242,7 +267,7 @@ header{
   transition: all 0.2s ease 0.3s;
   display: grid;
   grid-template-columns: auto 60px;
-  margin-left:5%;
+  margin-left: 5%;
   width: 90%;
   align-items: center;
   border-radius: 0px 0px 100px 100px;
@@ -422,14 +447,6 @@ section.active-section {
   align-items: flex-start;
 }
 .work-container::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  border-radius: 5px;
-  top: 0;
-  height: 0;
-  backdrop-filter: blur(2px);
-  background-color: var(--dark-light-glass);
   animation: filldown 1s ease 0.2s forwards;
 }
 @keyframes filldown {
@@ -526,11 +543,59 @@ section.active-section {
 }
 
 /*--------------------CONTACT SECTION--------------------*/
-.contact-section {
-  margin-top: 5%;
+.form-container {
+  position: relative;
+  display: grid;
+  width: 50vw;
 }
-.active-section h1 span {
-  font-size: 35px;
+.form-container input,
+textarea {
+  margin: auto 2rem;
+}
+.form-container input:first-child {
+  margin-top: 2rem;
+}
+.form-container button:last-child {
+  margin-bottom: 2rem;
+}
+input[type="text"],
+textarea {
+  font-size: medium;
+  color: var(--white);
+  border-bottom: 1px solid var(--white-light);
+  background-color: transparent;
+  padding: 1rem;
+  width: 80%;
+  resize: none;
+}
+input[type="text"]:focus,
+textarea:focus {
+  border-bottom: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 1.3rem 1rem;
+}
+.social-links {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.social-links a {
+  text-decoration: none;
+  height: 45px;
+  width: 45px;
+  border: 1px solid var(--white);
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  border-radius: 50%;
+  display: inline-flex;
+  transition: all 0.3s ease;
+  margin: 1rem 1rem;
+  transition: all 0s ease;
+}
+.social-links a:hover {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 /*--------------------CUSTOM SCROLLBAR--------------------*/
 ::-webkit-scrollbar {
@@ -541,4 +606,10 @@ section.active-section {
 }
 ::-webkit-slider-thumb {
   color: var(--dark);
+}
+
+@media only screen and (max-width: 700px) {
+  .form-container {
+    width: 80vw;
+  }
 }
