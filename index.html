@@ -50,7 +50,7 @@
           <a href="#contact" class="bt link-item">Contact</a>
         </nav>
         <button class="burger bt active-burger">
-          <svg viewBox="0 0 100 100" width="35" class="svgburger">
+          <svg viewBox="0 0 100 100" width="30" class="svgburger">
             <rect width="50" x="50" y="30" class="top"></rect>
             <rect width="100" x="1" y="50" class="mid"></rect>
             <rect width="50" x="1" y="70" class="bot"></rect>
@@ -149,22 +149,22 @@
         </p>
         <h2>Find me on</h2>
         <div class="social-links light-glass">
-          <a href="https://www.linkedin.com/in/mohamed-tarigg/"
+          <a href="https://www.linkedin.com/in/mohamed-tarigg/" target="_blank"
             ><i class="fa fa-linkedin" aria-hidden="true"></i
           ></a>
-          <a href="https://wa.me/97455428912"
+          <a href="https://wa.me/97455428912" target="_blank"
             ><i class="fa fa-whatsapp" aria-hidden="true"></i
           ></a>
-          <a href="https://github.com/MohammedTarigg"
+          <a href="https://github.com/MohammedTarigg" target="_blank"
             ><i class="fa fa-github" aria-hidden="true"></i
           ></a>
         </div>
         <form id="contact-form">
           <div class="form-container light-glass">
-            <input type="text" placeholder="Your Name" id="name" />
-            <input type="text" placeholder="Your Email" id="email" />
-            <input type="text" placeholder="Subject" id="subject" />
-            <textarea placeholder="Message" id="message"></textarea>
+            <input type="text" placeholder="Your Name" id="name" required />
+            <input type="email" placeholder="Your Email" id="email" required />
+            <input type="text" placeholder="Subject" id="subject" required />
+            <textarea placeholder="Message" id="message" required></textarea>
             <button type="submit" class="util-button">Send Message</button>
           </div>
         </form>
