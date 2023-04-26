@@ -16,6 +16,7 @@
     <link href="img/logo.png" rel="icon" />
 
     <link rel="stylesheet" href="css/index.css" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <link
       rel="stylesheet"
       type="text/css"
@@ -147,7 +148,7 @@
           about development.
         </p>
         <h2>Find me on</h2>
-        <div class="light-glass social-links">
+        <div class="social-links light-glass">
           <a href="https://www.linkedin.com/in/mohamed-tarigg/"
             ><i class="fa fa-linkedin" aria-hidden="true"></i
           ></a>
@@ -158,12 +159,12 @@
             ><i class="fa fa-github" aria-hidden="true"></i
           ></a>
         </div>
-        <form>
+        <form id="contact-form">
           <div class="form-container light-glass">
-            <input type="text" placeholder="Your Name" />
-            <input type="text" placeholder="Your Email" />
-            <input type="text" placeholder="Subject" />
-            <textarea placeholder="Message"></textarea>
+            <input type="text" placeholder="Your Name" id="name" />
+            <input type="text" placeholder="Your Email" id="email" />
+            <input type="text" placeholder="Subject" id="subject" />
+            <textarea placeholder="Message" id="message"></textarea>
             <button type="submit" class="util-button">Send Message</button>
           </div>
         </form>

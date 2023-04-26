@@ -114,3 +114,38 @@ function withReload() {
   });
 }
 withReload();
+
+/*-----------------Mail Function-----------------*/
+const form = document.getElementById('contact-form');
+
+form.addEventListener('submit',(e) => {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const subject = document.getElementById('subject').value;
+  const message = document.getElementById('message').value;
+
+  Email.send({
+    Host: "smtp.elasticemail.com",
+    Username: "mohamed.tarigsd@gmail.com",
+    Password: "B361006CEA5ED0DC63007D34A9D938C49CC3",
+    SecureToken: "57C8C4262DBF8623D760EA88CFDA2238BE0CE26F665D65A14A3E76D68B1719A7A65EDB015E920FEB504B9126C386A78F",
+    To: 'mohamed.tarigsd@gmail.com',
+    From: `kasber@outlook.sa`,
+    Subject: `${subject} sent by ${name} <${email}>`,
+    Body: `${message}`
+  }).then(response => {
+    if (response === 'OK') {
+      alert('Message sent successfully!');
+      form.reset();
+    } else {
+      console.log(response);
+      throw new Error('Failed to send message.');
+
+    }
+  })
+    .catch(error => {
+      alert(error.message);
+    });
+});
