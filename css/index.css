@@ -615,4 +615,7 @@ textarea:focus {
   .form-container {
     width: 80vw;
   }
+  .bt {
+    font-size: 14px;
+  }
 }

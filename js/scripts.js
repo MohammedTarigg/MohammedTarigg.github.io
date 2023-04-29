@@ -103,12 +103,17 @@ blobAnimation.start();
 /*-----------------On reload-----------------*/
 function withReload() {
   window.addEventListener("load",() => {
-    const elements = document.getElementsByClassName("bt link-item");
-    for (link of elements) {
-      link.classList.remove("active-link-item");
-      if ((window.location.href).includes(link.getAttribute("href"))) {
-        activeSection(link.hash);
-        link.classList.add("active-link-item");
+    if (typeof window.localStorage !== "undefined" && !localStorage.getItem('visited')) {
+      localStorage.setItem('visited',true);
+      return;
+    } else {
+      const elements = document.getElementsByClassName("bt link-item");
+      for (link of elements) {
+        link.classList.remove("active-link-item");
+        if ((window.location.href).includes(link.getAttribute("href"))) {
+          activeSection(link.hash);
+          link.classList.add("active-link-item");
+        }
       }
     }
   });
