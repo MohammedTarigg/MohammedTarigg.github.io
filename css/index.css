@@ -9,7 +9,7 @@
   --white-glass: #c9c9c921;
   --dark-light-glass: #32323b46;
 }
-* {
+* :not(path) {
   margin: 0;
   padding: 0;
   box-sizing: border-box;

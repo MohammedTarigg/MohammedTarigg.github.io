@@ -105,7 +105,6 @@ function withReload() {
   window.addEventListener("load",() => {
     if (typeof window.localStorage !== "undefined" && !localStorage.getItem('visited')) {
       localStorage.setItem('visited',true);
-      return;
     } else {
       const elements = document.getElementsByClassName("bt link-item");
       for (link of elements) {
