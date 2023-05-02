@@ -102,9 +102,14 @@ blobAnimation.start();
 
 /*-----------------On reload-----------------*/
 function withReload() {
+  const cookieValue = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("visited="))
+    ?.split("=")[1];
+
   window.addEventListener("load",() => {
-    if (typeof window.localStorage !== "undefined" && !localStorage.getItem('visited')) {
-      localStorage.setItem('visited',true);
+    if (!cookieValue) {
+      document.cookie = "visited=true; path=/";
     } else {
       const elements = document.getElementsByClassName("bt link-item");
       for (link of elements) {
