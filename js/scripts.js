@@ -148,13 +148,13 @@ form.addEventListener('submit',(e) => {
     if (message.length === 0) {
       errors.push(" Message must have a value")
     }
+    return errors;
   }
-  if (valid()) {
+  if (valid().length === 0) {
     Email.send({
       Host: "smtp.elasticemail.com",
-      Username: "mohamed.tarigsd@gmail.com",
-      Password: "B361006CEA5ED0DC63007D34A9D938C49CC3",
-      SecureToken: "57C8C4262DBF8623D760EA88CFDA2238BE0CE26F665D65A14A3E76D68B1719A7A65EDB015E920FEB504B9126C386A78F",
+      Username: "mohamed.tarigsdd@gmail.com",
+      Password: "FB0997147217E091FE7A073C5606B3204968",
       To: 'mohamed.tarigsd@gmail.com',
       From: `kasber@outlook.sa`,
       Subject: `${subject} sent by ${name} <${email}>`,
@@ -170,7 +170,8 @@ form.addEventListener('submit',(e) => {
       }
     })
       .catch(error => {
-        alert(error.message);
+        console.log(error);
+        alert("An error has occured");
       });
   } else {
     alert(errors);
