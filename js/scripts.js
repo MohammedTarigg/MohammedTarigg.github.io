@@ -76,12 +76,10 @@ function linkRules(click) {
   else return false;
 }
 function activeSection(sectionId) {
-  // console.log(sectionId);
   document
     .querySelector("section.active-section")
     .classList.remove("active-section");
   document.querySelector(sectionId).classList.add("active-section");
-  // window.scrollTo(0,0);
 }
 /*------------------------------- toggle overlay effect -----------------------------------*/
 function toggleOverLayEffect() {
@@ -99,30 +97,6 @@ const blobAnimation = KUTE.fromTo(
   { repeat: 999,duration: 3000,yoyo: true }
 );
 blobAnimation.start();
-
-/*-----------------On reload-----------------*/
-function withReload() {
-  const cookieValue = document.cookie
-    .split("; ")
-    .find((row) => row.startsWith("visited="))
-    ?.split("=")[1];
-
-  window.addEventListener("load",() => {
-    if (!cookieValue) {
-      document.cookie = "visited=true; path=/";
-    } else {
-      const elements = document.getElementsByClassName("bt link-item");
-      for (link of elements) {
-        link.classList.remove("active-link-item");
-        if ((window.location.href).includes(link.getAttribute("href"))) {
-          activeSection(link.hash);
-          link.classList.add("active-link-item");
-        }
-      }
-    }
-  });
-}
-withReload();
 
 /*-----------------Mail Function-----------------*/
 const form = document.getElementById('contact-form');
@@ -177,3 +151,21 @@ form.addEventListener('submit',(e) => {
     alert(errors);
   }
 });
+/*-----------------On reload-----------------*/
+function withLoad() {
+  window.addEventListener("load",() => {
+    const elements = document.getElementsByClassName("bt link-item");
+    if (!window.location.href.includes("#")) {
+      return;
+    }
+    for (link of elements) {
+      link.classList.remove("active-link-item");
+      if ((window.location.href).includes(link.getAttribute("href"))) {
+        activeSection(link.hash);
+        link.classList.add("active-link-item");
+      }
+    }
+  }
+  );
+}
+withLoad();
