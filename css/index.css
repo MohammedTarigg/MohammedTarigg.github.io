@@ -389,6 +389,7 @@ section.active-section {
   margin: 2vh 13vw;
 }
 .active-section p {
+  text-align: center;
   margin: auto 10% auto 15%;
   font-size: 18px;
   margin-block-start: 1em;
@@ -487,6 +488,7 @@ section.active-section {
 }
 .work-item h3 {
   margin: 5px;
+  text-align: center;
 }
 .work-thumbnail {
   position: relative;
