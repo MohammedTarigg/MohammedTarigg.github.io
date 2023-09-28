@@ -573,11 +573,15 @@ textarea {
   resize: none;
 }
 input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
+input[type="email"]:focus {
   border-bottom: 1px solid var(--primary-color);
   color: var(--primary-color);
   padding: 1.3rem 1rem;
+}
+textarea:focus {
+  border-bottom: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 3rem 1rem;
 }
 .social-links {
   position: relative;
