@@ -108,6 +108,9 @@ form.addEventListener('submit',(e) => {
   const email = document.getElementById('email').value;
   const subject = document.getElementById('subject').value;
   const message = document.getElementById('message').value;
+  let params = {
+    from_name: name,email_id: email,subject: subject,message: message
+  }
   function valid() {
     errors = [];
     if (name.length === 0) {
@@ -125,32 +128,35 @@ form.addEventListener('submit',(e) => {
     return errors;
   }
   if (valid().length === 0) {
-    Email.send({
-      Host: "smtp.elasticemail.com",
-      Username: "mohamed.tarigsdd@gmail.com",
-      Password: "FB0997147217E091FE7A073C5606B3204968",
-      To: 'mohamed.tarigsd@gmail.com',
-      From: `kasber@outlook.sa`,
-      Subject: `${subject} sent by ${name} <${email}>`,
-      Body: `${message}`
-    }).then(response => {
-      if (response === 'OK') {
-        alert('Message sent successfully!');
-        form.reset();
-      } else {
-        console.log(response);
-        throw new Error('Failed to send message.');
+    emailjs.send("service_1xt1ehu","template_7r4py37",params).then((res) => { alert("Message sent successfully!") })
+    // Email.send({
+    //   Host: "smtp.elasticemail.com",
+    //   Username: "mohamed.tarigsdd@gmail.com",
+    //   Password: "FB0997147217E091FE7A073C5606B3204968",
+    //   To: 'mohamed.tarigsd@gmail.com',
+    //   From: `kasber@outlook.sa`,
+    //   Subject: `${subject} sent by ${name} <${email}>`,
+    //   Body: `${message}`
+    // }).then(response => {
+    //   if (response === 'OK') {
+    //     alert('Message sent successfully!');
+    //     form.reset();
+    //   } else {
+    //     console.log(response);
+    //     throw new Error('Failed to send message.');
 
-      }
-    })
-      .catch(error => {
-        console.log(error);
-        alert("An error has occured");
-      });
-  } else {
-    alert(errors);
+    //   }
+    // })
+    //       .catch(error => {
+    //         console.log(error);
+    //         alert("An error has occured");
+    //       });
+    //   } else {
+    //     alert(errors);
+    //   }
   }
 });
+
 /*-----------------On reload-----------------*/
 function withLoad() {
   window.addEventListener("load",() => {
